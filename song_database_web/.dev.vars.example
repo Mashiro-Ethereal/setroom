@@ -1,0 +1,7 @@
+# 使用 scripts/setup-local.mjs 生成随机的本地测试口令。
+# 云端通过 wrangler secret put 设置，不要放进 wrangler.jsonc。
+# KRB 兼容入口：后台重置 KRB Key 后改用数据库里的密码校验值。
+ADMIN_PASSWORD=replace-with-the-krb-band-key
+PLATFORM_PASSWORD=replace-with-a-separate-private-platform-key
+# 独立随机的会话和密码保护密钥，需私密备份，不随管理员 Key 一起更换。
+AUTH_SECRET=replace-with-a-stable-random-secret-at-least-32-characters

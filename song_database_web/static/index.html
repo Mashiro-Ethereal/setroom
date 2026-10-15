@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="band-id" content="__BAND_ID__"><meta name="platform-admin" content="__PLATFORM__">
+  <meta name="app-token" content="__APP_TOKEN__">
+  <meta name="user-role" content="__USER_ROLE__">
+  <title>乐队曲库 · 云端版</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body class="role-__USER_ROLE__">
+  <aside class="sidebar">
+    <a class="brand" href="#upcoming"><span class="brand-icon">s.</span><span>SETROOM<small>__BAND_NAME__</small></span></a>
+    <div class="nav-caption">你的音乐工作间</div>
+    <nav aria-label="主导航">
+      <button data-view="upcoming"><span class="nav-symbol">▦</span>未来演出<span id="upcoming-count" class="nav-count">0</span></button>
+      <button data-view="songs"><span class="nav-symbol">♫</span>曲库<span id="songs-count" class="nav-count">0</span></button>
+      <button data-view="wishlist"><span class="nav-symbol">♡</span>愿望单<span id="wishlist-count" class="nav-count">0</span></button>
+      <button data-view="history"><span class="nav-symbol">◷</span>历史记录<span id="history-count" class="nav-count">0</span></button>
+    </nav>
+    <div class="sidebar-bottom">
+      <div class="local-label"><span class="status-dot"></span>云端曲库</div>
+      <p>每一次排练，为下一次登台。</p>
+      <a class="side-action" id="platform-link" href="/admin" hidden>网站管理后台 ↗</a>
+      <button class="side-action" id="backup-open">备份与恢复 <span>↗</span></button>
+      <button class="side-action" id="quit">退出登录 <span>⏻</span></button>
+    </div>
+  </aside>
+  <main id="main">
+    <div class="topbar"><span id="breadcrumb">工作空间 / 未来演出</span><span id="connection"><span class="status-dot"></span>已连接云端</span></div>
+    <div id="content"><div class="loading">正在打开你的音乐工作间…</div></div>
+  </main>
+  <dialog id="editor" aria-labelledby="editor-title"><div id="editor-content"></div></dialog>
+  <dialog id="confirm-dialog" aria-labelledby="confirm-title" aria-describedby="confirm-text">
+    <form method="dialog" class="confirm-content">
+      <h2 id="confirm-title"></h2><p id="confirm-text"></p>
+      <div class="dialog-actions"><button value="cancel" class="button">返回</button><button value="ok" id="confirm-ok" class="button primary">确认</button></div>
+    </form>
+  </dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

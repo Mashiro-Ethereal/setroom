@@ -1,0 +1,32 @@
+# This workspace also holds private band documents and media.
+/*
+!/.gitignore
+!/README.md
+!/song_database/
+!/song_database_web/
+
+.DS_Store
+__pycache__/
+*.pyc
+node_modules/
+.venv/
+.wrangler/
+.build/
+backups/
+data/
+*.sqlite3*
+*.db
+*.log
+.env*
+.dev.vars*
+!.dev.vars.example
+.access.txt
+.platform-access.txt
+
+# One-off migrations and reports contain the original band's private records.
+/song_database/import_docx_data.py
+/song_database/*.json
+
+# Keep existing deployment configuration local; publish the example instead.
+/song_database_web/wrangler.jsonc
+/song_database_web/wrangler.legacy.jsonc
